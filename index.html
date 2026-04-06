@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mama Flow — demo</title>
+  <title>Mama Flow — interactive demo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
@@ -18,38 +18,38 @@
       <div class="brand-mark">MF</div>
       <div>
         <div class="brand-name">Mama Flow</div>
-        <div class="brand-sub">спокойнее, когда всё в одном месте</div>
+        <div class="brand-sub">уютный трекер мамы и ребёнка</div>
       </div>
     </div>
 
     <nav class="nav">
       <a href="#dashboard">Главная</a>
-      <a href="#vaccines">Прививки</a>
+      <a href="#vaccines">Таймлайн</a>
       <a href="#games">Игры</a>
-      <a href="#community">Комьюнити</a>
+      <a href="#notes">Заметки</a>
       <a href="#assistant">AI</a>
     </nav>
 
-    <button class="ghost-btn">Войти</button>
+    <button class="ghost-btn" id="resetAllBtn">Сбросить демо</button>
   </header>
 
   <main class="page">
     <section class="hero card">
       <div class="hero-copy">
-        <div class="eyebrow">DEMO CONCEPT FOR MOMS</div>
-        <h1>Одна платформа для мамы и ребёнка — без хаоса между заметками, чатами и табличками.</h1>
+        <div class="eyebrow">INTERACTIVE DEMO</div>
+        <h1>Сайт, который можно реально потыкать, а не просто посмотреть.</h1>
         <p>
-          Календарь прививок, мягкие советы по возрасту, игры и занятия, напоминания,
-          дневник развития, чат с другими мамами и AI-ассистент, который помогает ориентироваться.
+          Здесь уже можно сохранить профиль ребёнка, отмечать дела, вести заметки,
+          фильтровать игры, открывать AI-подсказки и двигать таймлайн событий.
         </p>
 
         <div class="hero-actions">
-          <button class="primary-btn" id="scrollDashboardBtn">Посмотреть демо</button>
-          <button class="secondary-btn" id="openAssistantBtn">Открыть ассистента</button>
+          <button class="primary-btn" id="scrollDashboardBtn">Открыть дашборд</button>
+          <button class="secondary-btn" id="openAssistantBtn">Спросить ассистента</button>
         </div>
 
         <div class="hero-note">
-          Важно: это демо интерфейса. Медицинская информация и график прививок в реальном продукте должны подтверждаться врачом и официальными источниками.
+          Это демо-концепт. Таймлайн событий — ориентир, а точный график и медицинские решения нужно уточнять с врачом.
         </div>
       </div>
 
@@ -58,31 +58,31 @@
           <div class="phone-screen">
             <div class="mini-card mini-top">
               <span>Сегодня</span>
-              <strong>Полина, 1 год 8 мес</strong>
-              <p>Через 3 дня — напоминание о визите к педиатру</p>
+              <strong id="heroChildName">Полина, 1 год 8 мес</strong>
+              <p id="heroReminder">Напоминание: проверить ближайший визит и подготовить вопросы врачу</p>
             </div>
             <div class="mini-grid">
               <div class="mini-card">
                 <span>Игры на возраст</span>
-                <strong>6 идей</strong>
+                <strong id="heroGamesCount">6 идей</strong>
               </div>
               <div class="mini-card">
-                <span>Прививки</span>
-                <strong>1 событие</strong>
+                <span>Таймлайн</span>
+                <strong id="heroTimelineCount">4 события</strong>
               </div>
               <div class="mini-card">
-                <span>Сон</span>
-                <strong>11 ч 40 мин</strong>
+                <span>Заметки</span>
+                <strong id="heroNotesCount">2 записи</strong>
               </div>
               <div class="mini-card">
                 <span>AI-помощник</span>
-                <strong>2 новых совета</strong>
+                <strong>онлайн</strong>
               </div>
             </div>
             <div class="mini-feed">
-              <div class="mini-bubble pink">Что делать, если ребёнок не хочет пробовать новые продукты?</div>
-              <div class="mini-bubble violet">Игра дня — сортировка по цветам и формам.</div>
-              <div class="mini-bubble sand">В комьюнити обсуждают адаптацию к садику.</div>
+              <div class="mini-bubble pink">Сегодня можно сохранить свои заметки и реакции.</div>
+              <div class="mini-bubble violet">Игры фильтруются по речи, моторике и сенсорике.</div>
+              <div class="mini-bubble sand">События в таймлайне можно отмечать как выполненные.</div>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@
           <div class="eyebrow">ГЛАВНЫЙ ЭКРАН</div>
           <h2>Главное под рукой</h2>
         </div>
-        <p>Без перегруза. Сразу видно ребёнка, ближайшие события, полезные действия и спокойный маршрут на сегодня.</p>
+        <p>Сохраняется прямо в браузере. Можно обновлять страницу — данные останутся.</p>
       </div>
 
       <div class="dashboard-grid">
@@ -103,29 +103,41 @@
           <div class="card-top">
             <div>
               <div class="soft-label">Профиль ребёнка</div>
-              <h3>Полина</h3>
+              <h3 id="childNameCard">Полина</h3>
             </div>
-            <span class="pill">1 год 8 мес</span>
+            <span class="pill" id="childAgeCard">1 год 8 мес</span>
+          </div>
+
+          <div class="profile-form">
+            <label>
+              <span>Имя</span>
+              <input id="childNameInput" type="text" placeholder="Имя ребёнка" />
+            </label>
+            <label>
+              <span>Дата рождения</span>
+              <input id="childBirthInput" type="date" />
+            </label>
+            <button class="primary-btn small full-width" id="saveProfileBtn">Сохранить профиль</button>
           </div>
 
           <div class="profile-stats">
             <div>
               <span>Рост</span>
-              <strong>84 см</strong>
+              <strong id="growthStat">84 см</strong>
             </div>
             <div>
               <span>Вес</span>
-              <strong>11.4 кг</strong>
+              <strong id="weightStat">11.4 кг</strong>
             </div>
             <div>
               <span>Сон</span>
-              <strong>11 ч 40 м</strong>
+              <strong id="sleepStat">11 ч 40 м</strong>
             </div>
           </div>
 
           <div class="milestone-box">
             <span>Фокус недели</span>
-            <strong>Речь, сенсорика, мягкая адаптация к новым занятиям</strong>
+            <strong id="focusText">Речь, сенсорика, мягкая адаптация к новым занятиям</strong>
           </div>
         </article>
 
@@ -137,12 +149,12 @@
             </div>
           </div>
 
-          <ul class="check-list">
-            <li><input type="checkbox" checked /> <span>Проверить напоминание о визите к врачу</span></li>
-            <li><input type="checkbox" /> <span>Открыть 2 игры на развитие мелкой моторики</span></li>
-            <li><input type="checkbox" /> <span>Записать новый продукт в дневник питания</span></li>
-            <li><input type="checkbox" /> <span>Посмотреть советы по возрасту 18–24 месяца</span></li>
-          </ul>
+          <ul class="check-list" id="todoList"></ul>
+
+          <div class="inline-add">
+            <input id="newTodoInput" type="text" placeholder="Добавить новое дело..." />
+            <button class="secondary-btn small" id="addTodoBtn">Добавить</button>
+          </div>
         </article>
 
         <article id="assistant" class="card assistant-card">
@@ -154,17 +166,17 @@
           </div>
 
           <div class="chat-window" id="chatWindow">
-            <div class="message ai">Привет. Я помогу сориентироваться по возрасту, играм, рутине и напоминаниям. Я не заменяю врача.</div>
+            <div class="message ai">Привет. Я помогу сориентироваться по возрасту, играм, рутине и вопросам к врачу. Я не заменяю врача.</div>
           </div>
 
           <div class="quick-prompts">
-            <button class="prompt-btn">Что подойдёт для 1 года 8 месяцев?</button>
+            <button class="prompt-btn">Что подойдёт для этого возраста?</button>
             <button class="prompt-btn">Чем занять ребёнка на 10 минут?</button>
-            <button class="prompt-btn">Что спросить у педиатра на приёме?</button>
+            <button class="prompt-btn">Что спросить у врача на приёме?</button>
           </div>
 
           <div class="chat-input-row">
-            <input id="assistantInput" type="text" placeholder="Например: идеи игр для речи и сенсорики" />
+            <input id="assistantInput" type="text" placeholder="Например: игры для речи и спокойного вечера" />
             <button class="primary-btn small" id="sendAssistantBtn">Спросить</button>
           </div>
         </article>
@@ -175,55 +187,40 @@
       <article class="card large-card">
         <div class="section-head inline">
           <div>
-            <div class="eyebrow">КАЛЕНДАРЬ ПРИВИВОК</div>
-            <h2>Понятный таймлайн, а не страшная таблица</h2>
+            <div class="eyebrow">ТАЙМЛАЙН СОБЫТИЙ</div>
+            <h2>Не сухая таблица, а живая лента</h2>
           </div>
-          <p>В реальном продукте график должен настраиваться по стране, рекомендациям врача и особенностям ребёнка.</p>
+          <p>Можно отмечать выполненные события и добавлять свои визиты, осмотры или напоминания.</p>
         </div>
 
-        <div class="timeline">
-          <div class="timeline-item done">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span>Сделано</span>
-              <strong>Базовые ранние прививки</strong>
-              <p>Сохранены в карточке ребёнка.</p>
-            </div>
-          </div>
-          <div class="timeline-item current">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span>Ближайшее</span>
-              <strong>Проверить следующее окно вакцинации</strong>
-              <p>Можно открыть карточку события, заметки врача и список вопросов к приёму.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span>Напоминание</span>
-              <strong>Подготовка к визиту</strong>
-              <p>Что взять с собой, что спросить, где сохранить реакцию и самочувствие после визита.</p>
-            </div>
-          </div>
+        <div class="timeline" id="timelineList"></div>
+
+        <div class="timeline-form">
+          <input id="eventTitleInput" type="text" placeholder="Название события" />
+          <input id="eventNoteInput" type="text" placeholder="Короткая заметка" />
+          <button class="primary-btn small" id="addEventBtn">Добавить событие</button>
+        </div>
+
+        <div class="soft-footnote">
+          Точный график любых медицинских событий нужно уточнять с врачом.
         </div>
       </article>
 
       <article class="card side-stack">
         <div class="stack-box">
-          <span>Что можно добавить</span>
-          <strong>Дневник реакции</strong>
-          <p>После прививки мама отмечает температуру, настроение, сон и комментарии для себя.</p>
+          <span>Удобно</span>
+          <strong>Заметки после визита</strong>
+          <p>Можно зафиксировать реакцию, самочувствие, список вопросов и выводы врача.</p>
         </div>
         <div class="stack-box">
-          <span>Полезная фича</span>
-          <strong>Список вопросов врачу</strong>
-          <p>Перед визитом сервис сам собирает чеклист, чтобы ничего не забыть.</p>
+          <span>Спокойнее</span>
+          <strong>События в одном месте</strong>
+          <p>Осмотры, прививки, напоминания и бытовые дела не размазаны по чатам и заметкам.</p>
         </div>
         <div class="stack-box">
-          <span>Важно</span>
-          <strong>Не ставить диагнозы</strong>
-          <p>Приложение помогает ориентироваться, но не заменяет педиатра.</p>
+          <span>Без перегруза</span>
+          <strong>Только нужное</strong>
+          <p>Главная идея — не пугать маму, а собирать всё в понятный и мягкий маршрут.</p>
         </div>
       </article>
     </section>
@@ -234,7 +231,7 @@
           <div class="eyebrow">ИГРЫ И ЗАНЯТИЯ</div>
           <h2>Игры по возрасту и состоянию</h2>
         </div>
-        <p>Не просто “чем занять ребёнка”, а подбор по возрасту, времени, цели и уровню энергии.</p>
+        <p>Фильтруй по цели. Можно быстро понять, чем занять ребёнка прямо сейчас.</p>
       </div>
 
       <div class="filter-row">
@@ -277,29 +274,22 @@
     </section>
 
     <section class="feature-layout reverse">
-      <article class="card large-card">
+      <article id="notes" class="card large-card">
         <div class="section-head inline">
           <div>
-            <div class="eyebrow">СОВЕТЫ И РУТИНЫ</div>
-            <h2>Подсказки не в стиле “идеальная мама”, а в стиле “реально помогает”</h2>
+            <div class="eyebrow">ЗАМЕТКИ И НАБЛЮДЕНИЯ</div>
+            <h2>Можно реально использовать как личный журнал</h2>
           </div>
-          <p>Возрастные советы, список наблюдений, мягкие идеи по сну, питанию, речи, прогулкам и рутине.</p>
+          <p>Сохраняй короткие записи про сон, еду, реакции, настроение, вопросы врачу и всё, что важно не потерять.</p>
         </div>
 
-        <div class="advice-list">
-          <div class="advice-item">
-            <strong>Сон</strong>
-            <p>Не только норма часов, но и признаки перегруза, переходы по режиму и мягкие сценарии вечерней рутины.</p>
-          </div>
-          <div class="advice-item">
-            <strong>Питание</strong>
-            <p>Журнал новых продуктов, наблюдения и идеи, как спокойно пробовать без давления.</p>
-          </div>
-          <div class="advice-item">
-            <strong>Развитие</strong>
-            <p>Что сейчас может быть интересно ребёнку именно по возрасту, без гонки “должен уже уметь”.</p>
-          </div>
+        <div class="notes-form">
+          <input id="noteTitleInput" type="text" placeholder="Заголовок заметки" />
+          <textarea id="noteBodyInput" placeholder="Например: после прогулки был капризный вечер, нужно понаблюдать за сном..."></textarea>
+          <button class="primary-btn small" id="addNoteBtn">Сохранить заметку</button>
         </div>
+
+        <div class="notes-list" id="notesList"></div>
       </article>
 
       <article id="community" class="card community-card">
@@ -336,24 +326,6 @@
           </div>
         </div>
       </article>
-    </section>
-
-    <section class="card footer-cta">
-      <div>
-        <div class="eyebrow">ЕЩЁ ИДЕИ ДЛЯ ПРОДУКТА</div>
-        <h2>Что ещё можно добавить в следующую версию</h2>
-      </div>
-
-      <div class="idea-grid">
-        <div class="idea-chip">трекер зубов</div>
-        <div class="idea-chip">дневник температуры</div>
-        <div class="idea-chip">режимы дня по возрасту</div>
-        <div class="idea-chip">чеклист в поездку с ребёнком</div>
-        <div class="idea-chip">карточки экстренных номеров</div>
-        <div class="idea-chip">рост и вес на графике</div>
-        <div class="idea-chip">подбор книг по возрасту</div>
-        <div class="idea-chip">скрипты для визита к врачу</div>
-      </div>
     </section>
   </main>
 
