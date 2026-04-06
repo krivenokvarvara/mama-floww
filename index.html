@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mama Flow — demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-blur blur-1"></div>
+  <div class="bg-blur blur-2"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">MF</div>
+      <div>
+        <div class="brand-name">Mama Flow</div>
+        <div class="brand-sub">спокойнее, когда всё в одном месте</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#dashboard">Главная</a>
+      <a href="#vaccines">Прививки</a>
+      <a href="#games">Игры</a>
+      <a href="#community">Комьюнити</a>
+      <a href="#assistant">AI</a>
+    </nav>
+
+    <button class="ghost-btn">Войти</button>
+  </header>
+
+  <main class="page">
+    <section class="hero card">
+      <div class="hero-copy">
+        <div class="eyebrow">DEMO CONCEPT FOR MOMS</div>
+        <h1>Одна платформа для мамы и ребёнка — без хаоса между заметками, чатами и табличками.</h1>
+        <p>
+          Календарь прививок, мягкие советы по возрасту, игры и занятия, напоминания,
+          дневник развития, чат с другими мамами и AI-ассистент, который помогает ориентироваться.
+        </p>
+
+        <div class="hero-actions">
+          <button class="primary-btn" id="scrollDashboardBtn">Посмотреть демо</button>
+          <button class="secondary-btn" id="openAssistantBtn">Открыть ассистента</button>
+        </div>
+
+        <div class="hero-note">
+          Важно: это демо интерфейса. Медицинская информация и график прививок в реальном продукте должны подтверждаться врачом и официальными источниками.
+        </div>
+      </div>
+
+      <div class="hero-preview">
+        <div class="phone-shell">
+          <div class="phone-screen">
+            <div class="mini-card mini-top">
+              <span>Сегодня</span>
+              <strong>Полина, 1 год 8 мес</strong>
+              <p>Через 3 дня — напоминание о визите к педиатру</p>
+            </div>
+            <div class="mini-grid">
+              <div class="mini-card">
+                <span>Игры на возраст</span>
+                <strong>6 идей</strong>
+              </div>
+              <div class="mini-card">
+                <span>Прививки</span>
+                <strong>1 событие</strong>
+              </div>
+              <div class="mini-card">
+                <span>Сон</span>
+                <strong>11 ч 40 мин</strong>
+              </div>
+              <div class="mini-card">
+                <span>AI-помощник</span>
+                <strong>2 новых совета</strong>
+              </div>
+            </div>
+            <div class="mini-feed">
+              <div class="mini-bubble pink">Что делать, если ребёнок не хочет пробовать новые продукты?</div>
+              <div class="mini-bubble violet">Игра дня — сортировка по цветам и формам.</div>
+              <div class="mini-bubble sand">В комьюнити обсуждают адаптацию к садику.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="dashboard">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">ГЛАВНЫЙ ЭКРАН</div>
+          <h2>Главное под рукой</h2>
+        </div>
+        <p>Без перегруза. Сразу видно ребёнка, ближайшие события, полезные действия и спокойный маршрут на сегодня.</p>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="card profile-card">
+          <div class="card-top">
+            <div>
+              <div class="soft-label">Профиль ребёнка</div>
+              <h3>Полина</h3>
+            </div>
+            <span class="pill">1 год 8 мес</span>
+          </div>
+
+          <div class="profile-stats">
+            <div>
+              <span>Рост</span>
+              <strong>84 см</strong>
+            </div>
+            <div>
+              <span>Вес</span>
+              <strong>11.4 кг</strong>
+            </div>
+            <div>
+              <span>Сон</span>
+              <strong>11 ч 40 м</strong>
+            </div>
+          </div>
+
+          <div class="milestone-box">
+            <span>Фокус недели</span>
+            <strong>Речь, сенсорика, мягкая адаптация к новым занятиям</strong>
+          </div>
+        </article>
+
+        <article class="card todo-card">
+          <div class="card-top">
+            <div>
+              <div class="soft-label">На сегодня</div>
+              <h3>План без суеты</h3>
+            </div>
+          </div>
+
+          <ul class="check-list">
+            <li><input type="checkbox" checked /> <span>Проверить напоминание о визите к врачу</span></li>
+            <li><input type="checkbox" /> <span>Открыть 2 игры на развитие мелкой моторики</span></li>
+            <li><input type="checkbox" /> <span>Записать новый продукт в дневник питания</span></li>
+            <li><input type="checkbox" /> <span>Посмотреть советы по возрасту 18–24 месяца</span></li>
+          </ul>
+        </article>
+
+        <article id="assistant" class="card assistant-card">
+          <div class="card-top">
+            <div>
+              <div class="soft-label">AI-помощник</div>
+              <h3>Спросить быстро</h3>
+            </div>
+          </div>
+
+          <div class="chat-window" id="chatWindow">
+            <div class="message ai">Привет. Я помогу сориентироваться по возрасту, играм, рутине и напоминаниям. Я не заменяю врача.</div>
+          </div>
+
+          <div class="quick-prompts">
+            <button class="prompt-btn">Что подойдёт для 1 года 8 месяцев?</button>
+            <button class="prompt-btn">Чем занять ребёнка на 10 минут?</button>
+            <button class="prompt-btn">Что спросить у педиатра на приёме?</button>
+          </div>
+
+          <div class="chat-input-row">
+            <input id="assistantInput" type="text" placeholder="Например: идеи игр для речи и сенсорики" />
+            <button class="primary-btn small" id="sendAssistantBtn">Спросить</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="vaccines" class="feature-layout">
+      <article class="card large-card">
+        <div class="section-head inline">
+          <div>
+            <div class="eyebrow">КАЛЕНДАРЬ ПРИВИВОК</div>
+            <h2>Понятный таймлайн, а не страшная таблица</h2>
+          </div>
+          <p>В реальном продукте график должен настраиваться по стране, рекомендациям врача и особенностям ребёнка.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item done">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span>Сделано</span>
+              <strong>Базовые ранние прививки</strong>
+              <p>Сохранены в карточке ребёнка.</p>
+            </div>
+          </div>
+          <div class="timeline-item current">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span>Ближайшее</span>
+              <strong>Проверить следующее окно вакцинации</strong>
+              <p>Можно открыть карточку события, заметки врача и список вопросов к приёму.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span>Напоминание</span>
+              <strong>Подготовка к визиту</strong>
+              <p>Что взять с собой, что спросить, где сохранить реакцию и самочувствие после визита.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card side-stack">
+        <div class="stack-box">
+          <span>Что можно добавить</span>
+          <strong>Дневник реакции</strong>
+          <p>После прививки мама отмечает температуру, настроение, сон и комментарии для себя.</p>
+        </div>
+        <div class="stack-box">
+          <span>Полезная фича</span>
+          <strong>Список вопросов врачу</strong>
+          <p>Перед визитом сервис сам собирает чеклист, чтобы ничего не забыть.</p>
+        </div>
+        <div class="stack-box">
+          <span>Важно</span>
+          <strong>Не ставить диагнозы</strong>
+          <p>Приложение помогает ориентироваться, но не заменяет педиатра.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="games" class="games-section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">ИГРЫ И ЗАНЯТИЯ</div>
+          <h2>Игры по возрасту и состоянию</h2>
+        </div>
+        <p>Не просто “чем занять ребёнка”, а подбор по возрасту, времени, цели и уровню энергии.</p>
+      </div>
+
+      <div class="filter-row">
+        <button class="filter-chip active" data-filter="all">Все</button>
+        <button class="filter-chip" data-filter="speech">Речь</button>
+        <button class="filter-chip" data-filter="motor">Моторика</button>
+        <button class="filter-chip" data-filter="sensory">Сенсорика</button>
+        <button class="filter-chip" data-filter="calm">Спокойные</button>
+      </div>
+
+      <div class="games-grid" id="gamesGrid">
+        <article class="card game-card" data-tags="speech calm">
+          <span class="soft-label">5–10 минут</span>
+          <h3>Повтори звук</h3>
+          <p>Мягкая игра на речь. Показываешь предмет и повторяешь короткие звуки вместе.</p>
+          <div class="game-meta"><span>1.5–2 года</span><span>Речь</span></div>
+        </article>
+
+        <article class="card game-card" data-tags="motor sensory">
+          <span class="soft-label">10 минут</span>
+          <h3>Сортировка по цветам</h3>
+          <p>Крышечки, кубики или карточки. Игра на внимание, моторику и первые категории.</p>
+          <div class="game-meta"><span>1.5–3 года</span><span>Моторика</span></div>
+        </article>
+
+        <article class="card game-card" data-tags="sensory calm">
+          <span class="soft-label">8 минут</span>
+          <h3>Коробка ощущений</h3>
+          <p>Ткани, шуршащие предметы, мягкие и гладкие поверхности для сенсорного опыта.</p>
+          <div class="game-meta"><span>1+ год</span><span>Сенсорика</span></div>
+        </article>
+
+        <article class="card game-card" data-tags="motor">
+          <span class="soft-label">7 минут</span>
+          <h3>Перекладывание ложкой</h3>
+          <p>Из миски в миску. Простое занятие для координации и концентрации.</p>
+          <div class="game-meta"><span>1.5–2.5 года</span><span>Моторика</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="feature-layout reverse">
+      <article class="card large-card">
+        <div class="section-head inline">
+          <div>
+            <div class="eyebrow">СОВЕТЫ И РУТИНЫ</div>
+            <h2>Подсказки не в стиле “идеальная мама”, а в стиле “реально помогает”</h2>
+          </div>
+          <p>Возрастные советы, список наблюдений, мягкие идеи по сну, питанию, речи, прогулкам и рутине.</p>
+        </div>
+
+        <div class="advice-list">
+          <div class="advice-item">
+            <strong>Сон</strong>
+            <p>Не только норма часов, но и признаки перегруза, переходы по режиму и мягкие сценарии вечерней рутины.</p>
+          </div>
+          <div class="advice-item">
+            <strong>Питание</strong>
+            <p>Журнал новых продуктов, наблюдения и идеи, как спокойно пробовать без давления.</p>
+          </div>
+          <div class="advice-item">
+            <strong>Развитие</strong>
+            <p>Что сейчас может быть интересно ребёнку именно по возрасту, без гонки “должен уже уметь”.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="community" class="card community-card">
+        <div class="section-head inline compact">
+          <div>
+            <div class="eyebrow">КОМЬЮНИТИ</div>
+            <h2>Мамы рядом</h2>
+          </div>
+        </div>
+
+        <div class="community-feed">
+          <div class="community-post">
+            <div class="post-top">
+              <strong>Алина, ребёнок 2 года</strong>
+              <span>12 мин назад</span>
+            </div>
+            <p>У кого был мягкий способ адаптации к садику без резкого стресса? Поделитесь, что сработало.</p>
+          </div>
+
+          <div class="community-post">
+            <div class="post-top">
+              <strong>Лера, ребёнок 1 год 4 мес</strong>
+              <span>28 мин назад</span>
+            </div>
+            <p>Какие короткие игры на дорогу реально удерживают внимание хотя бы 10 минут?</p>
+          </div>
+
+          <div class="community-post">
+            <div class="post-top">
+              <strong>Ника, ребёнок 9 мес</strong>
+              <span>1 час назад</span>
+            </div>
+            <p>Сделала подборку любимых спокойных ритуалов перед сном. Если нужно, могу выложить списком.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card footer-cta">
+      <div>
+        <div class="eyebrow">ЕЩЁ ИДЕИ ДЛЯ ПРОДУКТА</div>
+        <h2>Что ещё можно добавить в следующую версию</h2>
+      </div>
+
+      <div class="idea-grid">
+        <div class="idea-chip">трекер зубов</div>
+        <div class="idea-chip">дневник температуры</div>
+        <div class="idea-chip">режимы дня по возрасту</div>
+        <div class="idea-chip">чеклист в поездку с ребёнком</div>
+        <div class="idea-chip">карточки экстренных номеров</div>
+        <div class="idea-chip">рост и вес на графике</div>
+        <div class="idea-chip">подбор книг по возрасту</div>
+        <div class="idea-chip">скрипты для визита к врачу</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
